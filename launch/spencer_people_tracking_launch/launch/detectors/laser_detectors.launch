@@ -1,5 +1,5 @@
 <launch>
-    <arg name="rear"  default="true"/>
+    <arg name="rear"  default="false"/>
     <arg name="detector_model" default="$(find srl_laser_detectors)/models/lms500_0.25deg_height70cm_rathausgasse.random_forest"/>
     <arg name="detector_type" default="random_forest"/>
 
