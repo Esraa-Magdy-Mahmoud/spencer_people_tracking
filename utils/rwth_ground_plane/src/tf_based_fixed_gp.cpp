@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     // while using different parameters.
     ros::NodeHandle private_node_handle_("~");
     private_node_handle_.param("base_footprint", base_footprint, string("base_footprint"));
-    private_node_handle_.param("camera_frame", camera_frame, string("/camera/"));
+    private_node_handle_.param("camera_frame", camera_frame, string("camera_depth_optical_frame"));
 
     // Create a topic publisher
     double publishRate;
