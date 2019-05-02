@@ -5,8 +5,8 @@
     <arg name="visualization" default="true"/> <!-- start Rviz with predefined configuration? -->
     <arg name="dummy_transforms" default="true"/> <!-- publish TF transform for sensor to groundplane -->
     <arg name="use_openni1" default="false"/> <!-- compatibility for Kinect v1 -->
-    <arg name="use_upper_body_detector" default="true"/> <!-- use depth-template-based upper-body detector? -->
-    <arg name="use_pcl_detector" default="false"/> <!-- use ROI-HOG detector from PCL? Cannot be combined with upper-body detector! -->
+    <arg name="use_upper_body_detector" default="false"/> <!-- use depth-template-based upper-body detector? -->
+    <arg name="use_pcl_detector" default="true"/> <!-- use ROI-HOG detector from PCL? Cannot be combined with upper-body detector! -->
     <arg name="use_hog_detector" default="false"/> <!-- use RGB groundHOG detector? Requires cudaHOG library-->
 
 
@@ -49,19 +49,19 @@
     
 
     <!-- People tracking -->
-    <include file="$(find spencer_people_tracking_launch)/launch/tracking/freiburg_people_tracking.launch">
+    <!--include file="$(find spencer_people_tracking_launch)/launch/tracking/freiburg_people_tracking.launch">
         <arg name="rgbd" default="true"/>
         <arg name="laser_low_confidence_detections" default="false"/>
-    </include>
+    </include-->
 
     <!-- As there is not yet any high-recall/low-confidence detector for RGB-D, and we are not using laser, tracks may get deleted too quickly in case of missed detections.
          To deal with this, for the moment, we increase the maximum number of occluded frames to be  a bit more tolerant towards missed detections.
          This works fine in uncrowded environments which are not very dynamic. -->
-    <rosparam param="/spencer/perception_internal/people_tracking/srl_nearest_neighbor_tracker/max_occlusions_before_deletion">50</rosparam>
-    <rosparam param="/spencer/perception_internal/people_tracking/srl_nearest_neighbor_tracker/max_occlusions_before_deletion_of_mature_track">200</rosparam>
+    <!--rosparam param="/spencer/perception_internal/people_tracking/srl_nearest_neighbor_tracker/max_occlusions_before_deletion">50</rosparam>
+    <rosparam param="/spencer/perception_internal/people_tracking/srl_nearest_neighbor_tracker/max_occlusions_before_deletion_of_mature_track">200</rosparam-->
 
     <!-- Group tracking -->
-    <include file="$(find spencer_people_tracking_launch)/launch/tracking/group_tracking.launch"/> 
+    <!--include file="$(find spencer_people_tracking_launch)/launch/tracking/group_tracking.launch"/--> 
 
     <!-- RViz visualization -->
     <node name="tracking_visualization_rviz" pkg="rviz" type="rviz" args="-d $(find spencer_people_tracking_launch)/rviz/tracking-single-rgbd-sensor.rviz" if="$(arg visualization)"/>

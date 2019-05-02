@@ -22,12 +22,12 @@
 
 
     <!-- People tracking -->
-    <include file="$(find spencer_people_tracking_launch)/launch/tracking/freiburg_people_tracking.launch">
+    <!--include file="$(find spencer_people_tracking_launch)/launch/tracking/freiburg_people_tracking.launch">
         <arg name="rgbd" default="true"/>
         <arg name="laser_low_confidence_detections" default="true"/>
-    </include>
+    </include-->
 
     <!-- Group tracking -->
-    <include file="$(find spencer_people_tracking_launch)/launch/tracking/group_tracking.launch"/> 
+    <!--include file="$(find spencer_people_tracking_launch)/launch/tracking/group_tracking.launch"/--> 
 
 </launch>

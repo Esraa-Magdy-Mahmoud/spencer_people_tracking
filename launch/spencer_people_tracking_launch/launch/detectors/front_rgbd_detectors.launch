@@ -1,6 +1,6 @@
 <launch>
-    <arg name="upper_body" default="true"/>
-    <arg name="pcl_detector" default="false"/> <!-- do not use at the same time with upper-body detector! -->
+    <arg name="upper_body" default="false"/>
+    <arg name="pcl_detector" default="true"/> <!-- do not use at the same time with upper-body detector! -->
     <arg name="hog" default="false"/>
 
     <arg name="ground_plane" value="/spencer/sensors/rgbd_front_top/ground_plane"/>
@@ -33,8 +33,8 @@
         <group if="$(arg pcl_detector)">
             <remap from="/spencer/perception/detected_persons" to="/spencer/perception_internal/detected_persons/rgbd_front_top/upper_body"/> <!-- replaces upper-body detections -->
             <include file="$(find pcl_people_detector)/launch/start.launch" ns="rgbd_front_top">
-                <arg name="input_topic" value="/spencer/sensors/rgbd_front_top/depth_registered/points"/>
-                <arg name="camera_info_topic" value="/spencer/sensors/rgbd_front_top/rgb/camera_info"/>
+                <arg name="input_topic" value="/camera/depth/points"/>
+                <arg name="camera_info_topic" value="/spencer/sensors/rgbd_front_top/depth/camera_info"/>
                 <arg name="base_link_frame" value="base_footprint"/>
                 <arg name="detection_frame" value="pcl_people_detector_front_link"/>
                 <arg name="ground_coeffs" value="0 0 -1 0"/>
