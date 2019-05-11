@@ -1,4 +1,4 @@
-fixed_frame:            odom
+fixed_frame:            map
 connection_threshold:   0.15
 min_points_per_group:   20
 leg_reliability_limit:  0.21

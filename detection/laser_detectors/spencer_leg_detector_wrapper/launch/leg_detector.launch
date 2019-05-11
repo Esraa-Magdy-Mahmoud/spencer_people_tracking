@@ -1,6 +1,6 @@
 <!-- Launches the leg detector from wg-perception (needs to be installed separately) -->
 <launch>
-    <arg name="scan" default="scan"/>                           <!-- laser scan input topic -->
+    <arg name="scan" default="base_scan"/>                           <!-- laser scan input topic -->
     <arg name="detected_persons" default="detected_persons"/>   <!-- output topic -->
     <arg name="node_prefix" default="leg_detector"/>            <!-- prefix for node names -->
 
@@ -11,7 +11,7 @@
     <arg name="cov_scale" default="0.01"/>
 
 
-    <group ns="$(arg node_prefix)">
+   
         <node name="detector" pkg="leg_detector" type="leg_detector" args="scan:=$(arg scan) $(find leg_detector)/config/trained_leg_detector.yaml" output="screen">
             <!-- Load detector config -->
             <rosparam command="load" file="$(find spencer_leg_detector_wrapper)/configs/$(arg config_file)"/>
@@ -29,6 +29,6 @@
             <remap from="/position_measurements" to="leg_tracker_measurements"/>
             <remap from="/spencer/perception/detected_persons" to="$(arg detected_persons)"/>
         </node>
-    </group>
+
         
 </launch>

@@ -1,0 +1,24 @@
+<!-- Alternative launch file that launches two instances of the laser-based leg detector from wg-perception (needs to be installed separately) -->
+<launch>
+    <arg name="front" default="true"/>  <!-- front detector enabled? -->
+   
+    
+    <arg name="config_file" default="spencer2.yaml"/>
+
+    <arg name="detection_id_increment" default="20"/>
+    <arg name="detection_id_offset_front" default="1"/>
+    <arg name="detection_id_offset_rear" default="2"/>
+
+ 
+        <!-- Front -->
+        <include file="$(find spencer_leg_detector_wrapper)/launch/leg_detector.launch" if="$(arg front)">
+            <arg name="scan" value="/base_scan"/>
+            <arg name="detected_persons" value="/spencer/perception_internal/detected_persons/laser_front"/>
+            <arg name="detection_id_increment" value="$(arg detection_id_increment)"/>
+            <arg name="detection_id_offset" value="$(arg detection_id_offset_front)"/>
+            <arg name="config_file" value="$(arg config_file)"/>
+        </include>
+
+
+
+</launch>
