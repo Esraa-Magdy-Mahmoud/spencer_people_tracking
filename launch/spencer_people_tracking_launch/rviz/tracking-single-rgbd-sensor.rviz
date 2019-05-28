@@ -45,16 +45,6 @@ Visualization Manager:
           Value: true
         actor1:
           Value: true
-        actor10:
-          Value: true
-        actor11:
-          Value: true
-        actor12:
-          Value: true
-        actor13:
-          Value: true
-        actor14:
-          Value: true
         actor2:
           Value: true
         actor3:
@@ -155,20 +145,80 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
+        base_footprint:
+          base_link:
+            camera_rgb_frame:
+              camera_depth_frame:
+                camera_depth_optical_frame:
+                  {}
+              camera_link:
+                {}
+              camera_rgb_optical_frame:
+                {}
+            caster_back_link:
+              {}
+            caster_front_link:
+              {}
+            cliff_sensor_front_link:
+              {}
+            cliff_sensor_left_link:
+              {}
+            cliff_sensor_right_link:
+              {}
+            gyro_link:
+              {}
+            mount_asus_xtion_pro_link:
+              {}
+            plate_bottom_link:
+              {}
+            plate_middle_link:
+              {}
+            plate_top_link:
+              {}
+            pole_bottom_0_link:
+              {}
+            pole_bottom_1_link:
+              {}
+            pole_bottom_2_link:
+              {}
+            pole_bottom_3_link:
+              {}
+            pole_bottom_4_link:
+              {}
+            pole_bottom_5_link:
+              {}
+            pole_kinect_0_link:
+              {}
+            pole_kinect_1_link:
+              {}
+            pole_middle_0_link:
+              {}
+            pole_middle_1_link:
+              {}
+            pole_middle_2_link:
+              {}
+            pole_middle_3_link:
+              {}
+            pole_top_0_link:
+              {}
+            pole_top_1_link:
+              {}
+            pole_top_2_link:
+              {}
+            pole_top_3_link:
+              {}
+            wheel_left_link:
+              {}
+            wheel_right_link:
+              {}
+          pcl_people_detector_front_link:
+            {}
+          rgbd_front_top_link:
+            {}
         map:
           actor0:
             {}
           actor1:
-            {}
-          actor10:
-            {}
-          actor11:
-            {}
-          actor12:
-            {}
-          actor13:
-            {}
-          actor14:
             {}
           actor2:
             {}
@@ -187,76 +237,7 @@ Visualization Manager:
           actor9:
             {}
         odom:
-          base_footprint:
-            base_link:
-              camera_rgb_frame:
-                camera_depth_frame:
-                  camera_depth_optical_frame:
-                    {}
-                camera_link:
-                  {}
-                camera_rgb_optical_frame:
-                  {}
-              caster_back_link:
-                {}
-              caster_front_link:
-                {}
-              cliff_sensor_front_link:
-                {}
-              cliff_sensor_left_link:
-                {}
-              cliff_sensor_right_link:
-                {}
-              gyro_link:
-                {}
-              mount_asus_xtion_pro_link:
-                {}
-              plate_bottom_link:
-                {}
-              plate_middle_link:
-                {}
-              plate_top_link:
-                {}
-              pole_bottom_0_link:
-                {}
-              pole_bottom_1_link:
-                {}
-              pole_bottom_2_link:
-                {}
-              pole_bottom_3_link:
-                {}
-              pole_bottom_4_link:
-                {}
-              pole_bottom_5_link:
-                {}
-              pole_kinect_0_link:
-                {}
-              pole_kinect_1_link:
-                {}
-              pole_middle_0_link:
-                {}
-              pole_middle_1_link:
-                {}
-              pole_middle_2_link:
-                {}
-              pole_middle_3_link:
-                {}
-              pole_top_0_link:
-                {}
-              pole_top_1_link:
-                {}
-              pole_top_2_link:
-                {}
-              pole_top_3_link:
-                {}
-              wheel_left_link:
-                {}
-              wheel_right_link:
-                {}
-            pcl_people_detector_front_link:
-              {}
-            rgbd_front_top_link:
-              {}
+          {}
       Update Interval: 0
       Value: true
     - Alpha: 0.400000006
@@ -498,7 +479,7 @@ Visualization Manager:
     - Class: rviz/Camera
       Enabled: true
       Image Rendering: background and overlay
-      Image Topic: /spencer/sensors/rgbd_front_top/rgb/image_raw
+      Image Topic: /camera/rgb/image_raw
       Name: Camera
       Overlay Alpha: 0.5
       Queue Size: 2
@@ -708,7 +689,7 @@ Visualization Manager:
   Global Options:
     Background Color: 59; 59; 59
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -728,25 +709,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 12.4809151
+      Distance: 10.4587145
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.590581834
-        Y: -0.718594193
-        Z: -0.660371244
+        X: 1.60232568
+        Y: -2.63526559
+        Z: 3.45162082
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.439798534
+      Pitch: 1.08979917
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.58906555
+      Yaw: 4.63907194
     Saved:
       - Class: rviz/Orbit
         Distance: 15.4204998
