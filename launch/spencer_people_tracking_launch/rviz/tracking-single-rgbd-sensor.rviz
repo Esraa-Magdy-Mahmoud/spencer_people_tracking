@@ -13,6 +13,7 @@ Panels:
         - /Fused detections1/Z offset1
         - /Fused detections1/Render covariances1
         - /TrackedPersons Visually Confirmed1/Render covariances1
+        - /MarkerArray1/Status1
       Splitter Ratio: 0.591953993
     Tree Height: 496
   - Class: rviz/Selection
@@ -451,6 +452,7 @@ Visualization Manager:
         Grid: true
         LaserScan: true
         Map: true
+        MarkerArray: true
         RGB-D cloud: true
         Raw detections:
           Composite arrows: true
@@ -708,6 +710,14 @@ Visualization Manager:
       Z offset:
         Use Z position from message: false
         Value: 0
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /agents_states/agent_markers
+      Name: MarkerArray
+      Namespaces:
+        other_agent: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 59; 59; 59
